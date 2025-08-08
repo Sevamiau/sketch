@@ -1,9 +1,8 @@
 /* Nota mental: acostumbrarme a bloquear la PC. */
 
-.root{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+#resizeButton {
+    margin: 10px 10px 10px 0px;
 }
 
 #container{
