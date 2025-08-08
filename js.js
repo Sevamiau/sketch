@@ -1,19 +1,15 @@
 
 const container = document.querySelector('#container');
-container.style.touchAction = 'none';
-
-// console.log(container);
+const resizeButton = document.querySelector('#resizeButton');
 
 let isDrawing = false;
 
-for(let i = 0; i <256; i++){
+let size = 16;
+
+for(let i = 0; i <size * size; i++){
     const newDiv = document.createElement('div');
     newDiv.classList.add()
-    // console.log(i+1);
-    // newDiv.appendChild(
-    //     document.createTextNode(i+1)
-    // )
-
+ 
     newDiv.addEventListener('pointerdown', (e) => {
         console.log(e);
         isDrawing = true;
@@ -35,16 +31,29 @@ for(let i = 0; i <256; i++){
 
     container.addEventListener('pointerup', stop);
     container.appendChild(newDiv);
-    
 }
 
-const dialog = document.querySelector('dialog');
 
-function showDialog() {
-    dialog.showModal();
-}
+resizeButton.addEventListener('click', () => {
+    // alert('miau');
+    let newSize = prompt("elegite el numero pal grid amigo (maximo 100):");
+    newSize = parseInt(newSize);
 
-function closeDialog() {
-    dialog.close(); 
-}
+});
 
+
+// function resizeGrid(){
+//     const inputElement = document.getElementById('grid-size');
+//     alert(inputElement.value);
+
+// }
+
+
+
+
+// resizeButton.addEventListener("click", () => {
+// //   let newSize = prompt("elegite el numero pal grid amigo (maximo 100):");
+// //   newSize = parseInt(newSize);
+//     alert('miau');
+
+// });
