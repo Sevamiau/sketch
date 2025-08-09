@@ -56,7 +56,7 @@ resizeButton.addEventListener('click', () => {
     newSize = parseInt(newSize);
     // createGrid(newSize);
 
-    if(newSize <= 100){
+    if(newSize >= 2 && newSize <= 100){
         createGrid(newSize);
     } else(alert('elegi un numero bien paswato'));
     
