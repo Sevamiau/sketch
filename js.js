@@ -1,8 +1,18 @@
 const container = document.querySelector('#container');
 const resizeButton = document.querySelector('#resizeButton');
 const resetButton = document.querySelector('#resetButton')
+const gridOffButton = document.querySelector('#gridOffButton');
 
 let isDrawing = false;
+
+function gridOff (){
+    const gridOff = document.getElementById('#container > div');
+    Element.classList.toggle('active');
+    gridOff.addEventListener('click', () => {
+        
+    })
+}
+
 
 function randomizeColor() {
 
@@ -65,4 +75,5 @@ resizeButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     createGrid(16);
 })
+
 
