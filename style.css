@@ -1,5 +1,9 @@
 /* Nota mental: acostumbrarme a bloquear la PC. */
-
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #resizeButton {
     margin: 10px 10px 10px 0px;

@@ -11,11 +11,16 @@ function createGrid(size) {
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
         container.appendChild(square);
+    
     }
 
+    const newDiv = document.createElement('div');
     
+    newDiv.addEventListener('click', () => {
+        newDiv.style.backgroundColor = 'pink';
+    } )
 
-    
+
 
 }
 
