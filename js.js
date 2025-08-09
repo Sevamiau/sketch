@@ -4,6 +4,15 @@ const resetButton = document.querySelector('#resetButton')
 
 let isDrawing = false;
 
+function randomizeColor() {
+
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b} )`;
+}
+
 function createGrid(size) {
     container.innerHTML = '';
     const squareSize = 500 / size;
@@ -21,12 +30,12 @@ function createGrid(size) {
     squares.forEach((square) => {
         square.addEventListener('pointerdown', () => {
             isDrawing = true;
-            square.style.backgroundColor = 'pink';
+            square.style.backgroundColor = randomizeColor();
         })
 
         square.addEventListener('pointermove', () => {
             if(!isDrawing) return;
-            square.style.backgroundColor = 'pink'
+            square.style.backgroundColor = randomizeColor();
         })
 
         const stop = () => {
@@ -45,7 +54,11 @@ createGrid(16)
 resizeButton.addEventListener('click', () => {
     let newSize = prompt('Elegite un tamaño de grid amigo ');
     newSize = parseInt(newSize);
-    createGrid(newSize);
+    // createGrid(newSize);
+
+    if(newSize <= 100){
+        createGrid(newSize);
+    } else(alert('elegi un numero bien paswato'));
     
 })
 
