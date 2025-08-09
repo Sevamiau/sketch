@@ -1,6 +1,8 @@
 const container = document.querySelector('#container');
 const resizeButton = document.querySelector('#resizeButton');
 
+let isDrawing = false;
+
 function createGrid(size) {
     container.innerHTML = '';
     const squareSize = 500 / size;
@@ -14,11 +16,55 @@ function createGrid(size) {
     
     }
 
-    const newDiv = document.createElement('div');
-    
-    newDiv.addEventListener('click', () => {
-        newDiv.style.backgroundColor = 'pink';
-    } )
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('pointerdown', (e) => {
+            isDrawing = true;
+            square.style.backgroundColor = 'pink';
+        })
+
+        square.addEventListener('pointermove', (e) => {
+            if(!isDrawing) return;
+            square.style.backgroundColor = 'pink'
+        })
+
+        const stop = (e) => {
+            isDrawing = false;
+            // container.realeasePointerCapture(e.pointerId);
+        }
+
+        container.addEventListener('pointerup', stop);
+        // container.appendChild(squares);
+
+    })
+
+
+    // for(let i = 0; i <size * size; i++){
+//     const newDiv = document.createElement('div');
+//     newDiv.classList.add()
+ 
+//     newDiv.addEventListener('pointerdown', (e) => {
+//         console.log(e);
+//         isDrawing = true;
+//         newDiv.style.backgroundColor = 'pink';
+
+//     })
+
+//     newDiv.addEventListener('pointermove', (e) => {
+//         if(!isDrawing) return;
+//         isDrawing = true;
+//         newDiv.style.backgroundColor = 'pink';
+
+//     })
+
+//     const stop = (e) => {
+//         isDrawing = false;
+//         container.releasePointerCapture(e.pointerId);
+//     }
+
+//     container.addEventListener('pointerup', stop);
+//     container.appendChild(newDiv);
+// }
 
 
 
@@ -30,7 +76,11 @@ resizeButton.addEventListener('click', () => {
     let newSize = prompt('Elegite un tamaño de grid amigo ');
     newSize = parseInt(newSize);
     createGrid(newSize);
+    
 });
+
+
+
 
 
 

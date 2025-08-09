@@ -1,4 +1,4 @@
-/* Nota mental: acostumbrarme a bloquear la PC. */
+
 body {
     display: flex;
     align-items: center;
@@ -34,5 +34,5 @@ body {
 
 
 #container > div:hover {
-    background-color: pink;
+    background-color: pink; 
 }
