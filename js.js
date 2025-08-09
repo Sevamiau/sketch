@@ -19,17 +19,17 @@ function createGrid(size) {
 
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
-        square.addEventListener('pointerdown', (e) => {
+        square.addEventListener('pointerdown', () => {
             isDrawing = true;
             square.style.backgroundColor = 'pink';
         })
 
-        square.addEventListener('pointermove', (e) => {
+        square.addEventListener('pointermove', () => {
             if(!isDrawing) return;
             square.style.backgroundColor = 'pink'
         })
 
-        const stop = (e) => {
+        const stop = () => {
             isDrawing = false;
         }
 
